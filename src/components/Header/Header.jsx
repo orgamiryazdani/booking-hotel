@@ -7,9 +7,11 @@ import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
+import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
-    const [destination, setDestination] = useState("");
+    const [searchParams] = useSearchParams()
+    const [destination, setDestination] = useState(searchParams.get("destination") || "");
     const [openOptions, setOpenOptions] = useState(false);
     const [options, setOptions] = useState({
         adult: 1,
@@ -25,12 +27,27 @@ function Header() {
     ])
     const [openDate, setOpenDate] = useState(false)
 
+    const navigate = useNavigate()
+
     const handleOptions = (name, operation) => {
         setOptions(prev => {
             return {
                 ...prev,
                 [name]: operation === "inc" ? options[name] + 1 : options[name] - 1
             }
+        })
+    }
+
+    const handleSearch = () => {
+        const encodedParams = createSearchParams({
+            data: JSON.stringify(date),
+            destination,
+            options: JSON.stringify(options)
+        })
+        //setSearchParams(encodedParams)
+        navigate({
+            pathname: "/hotels",
+            search: encodedParams.toString()
         })
     }
 
@@ -53,7 +70,7 @@ function Header() {
                 <div className="headerSearchItem">
                     <HiCalendar className="headerIcon dateIcon" />
                     <div onClick={() => setOpenDate(!openDate)} className="dateDropDown">
-                        {`${format(date[0].startDate,"MM/dd/yyy")} to ${format(date[0].endDate,"MM/dd/yyy")}`}
+                        {`${format(date[0].startDate, "MM/dd/yyy")} to ${format(date[0].endDate, "MM/dd/yyy")}`}
                     </div>
                     {openDate && <DateRange
                         onChange={item => setDate([item.selection])}
@@ -75,7 +92,7 @@ function Header() {
                     <span className="seperator"></span>
                 </div>
                 <div className="headerSearchItem">
-                    <button className="headerSearchBtn">
+                    <button className="headerSearchBtn" onClick={handleSearch}>
                         <HiSearch className="headerIcon" />
                     </button>
                 </div>
