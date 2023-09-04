@@ -6,24 +6,24 @@ import { Route, Routes } from "react-router-dom";
 import AppLayout from "./components/AppLayout/AppLayout";
 import Hotels from "./components/Hotels/Hotels";
 import HotelsProvider from "./components/context/HotelsProvider";
+import SingleHotel from "./components/SingleHotel/SingleHotel";
+import Bookmark from "./components/Bookmark/Bookmark";
 
 function App() {
   return (
     <HotelsProvider>
-      <div>
-        <Toaster />
-        <Header />
-        <Routes>
-          <Route path="/" element={<LocationList />} />
-          <Route path="/hotels" element={<AppLayout />}>
-            <Route index element={<Hotels />} />
-            <Route path=":id" element={<div>single hotel</div>} />
-          </Route>
-        </Routes>
-      </div>
+      <Toaster />
+      <Header />
+      <Routes>
+        <Route path="/" element={<LocationList />} />
+        <Route path="/hotels" element={<AppLayout />}>
+          <Route index element={<Hotels />} />
+          <Route path=":id" element={<SingleHotel />} />
+        </Route>
+        <Route path="/bookmark" element={<Bookmark />} />
+      </Routes>
     </HotelsProvider>
   )
 }
 
 export default App;
-
