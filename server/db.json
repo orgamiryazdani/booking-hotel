@@ -1325,30 +1325,30 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Sevenoaks",
-      "country": "United Kingdom of Great Britain and Northern Ireland (the)",
-      "countryCode": "GB",
-      "latitude": "51.29455864325789",
-      "longitude": "0.21972656250000003",
-      "host_location": "Sevenoaks United Kingdom of Great Britain and Northern Ireland (the)",
+      "cityName": "Kommunarskiy",
+      "country": "Russian Federation (the)",
+      "countryCode": "RU",
+      "latitude": "53.76819584019795",
+      "longitude": "50.44921875000001",
+      "host_location": "Kommunarskiy Russian Federation (the)",
       "id": 1
     },
     {
-      "cityName": "Øresund",
-      "country": "Denmark",
-      "countryCode": "DK",
-      "latitude": "55.50841618187183",
-      "longitude": "12.612304687500002",
-      "host_location": "Øresund Denmark",
+      "cityName": "Kedrovyy",
+      "country": "Russian Federation (the)",
+      "countryCode": "RU",
+      "latitude": "57.627758130836334",
+      "longitude": "80.33203125",
+      "host_location": "Kedrovyy Russian Federation (the)",
       "id": 2
     },
     {
-      "cityName": "Draveil",
-      "country": "France",
-      "countryCode": "FR",
-      "latitude": "48.66738490890204",
-      "longitude": "2.4169921875000004",
-      "host_location": "Draveil France",
+      "cityName": "Qiemo",
+      "country": "China",
+      "countryCode": "CN",
+      "latitude": "39.44891948347229",
+      "longitude": "85.693359375",
+      "host_location": "Qiemo China",
       "id": 3
     }
   ]
