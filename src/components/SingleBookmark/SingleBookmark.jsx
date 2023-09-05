@@ -6,13 +6,13 @@ import ReactCountryFlag from "react-country-flag"
 
 function SingleBookmark() {
     const { id } = useParams()
-    const { getBookmark, isLoadingCurrentBookmark, currentBookmark } = useBookmark()
+    const { getBookmark, isLoading, currentBookmark } = useBookmark()
     const navigate = useNavigate()
     useEffect(() => {
         getBookmark(id)
     }, [id]);
 
-    if (isLoadingCurrentBookmark || !currentBookmark) return <Loader />
+    if (isLoading || !currentBookmark) return <Loader />
 
     return (
         <div>
