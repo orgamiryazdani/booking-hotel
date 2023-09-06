@@ -7,7 +7,7 @@ import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
-import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
 function Header() {
     const [searchParams] = useSearchParams()
@@ -53,6 +53,7 @@ function Header() {
 
     return (
         <div className="header">
+            <Link to="bookmark">Bookmarks</Link>
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <MdLocationOn className="headerIcon locationIcon" />
@@ -97,6 +98,7 @@ function Header() {
                     </button>
                 </div>
             </div>
+            <Link to='login'>login</Link>
         </div>
     )
 }
