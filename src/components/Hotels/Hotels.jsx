@@ -8,7 +8,7 @@ function Hotels() {
     if (isLoading) return <Loader />
     return (
         <div className="searchList">
-            <h2>Search Results ({hotels.length})</h2>
+            <h2>نتایج جستجو ({hotels.length})</h2>
             {
                 hotels.map((item) => {
                     return <Link key={item.id} to={`/hotels/${item.id}?lat=${item.latitude}&lng=${item.longitude}`}>
@@ -18,8 +18,8 @@ function Hotels() {
                                 <p className="location">{item.smart_location}</p>
                                 <p className="name">{item.name}</p>
                                 <p className="price">
-                                    €&nbsp;{item.price}&nbsp;
-                                    <span>night</span>
+                                    {item.price} هزار تومان&nbsp; - &nbsp;
+                                    <span>هر شب</span>
                                 </p>
                             </div>
                         </div>

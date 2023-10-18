@@ -20,7 +20,7 @@ function Map({ markerLocations }) {
         <div className="mapContainer">
             <MapContainer className="map" center={mapCenter} zoom={5} scrollWheelZoom={true}>
                 <button onClick={getPosition} className="getLocation">{
-                    isLoadingPosition ? "Loading..." : "Use Your Location"
+                    isLoadingPosition ? "در حال بارگیری ..." : "انتخاب موقعیت مکانی شما"
                 }</button>
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

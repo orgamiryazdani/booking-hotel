@@ -19,10 +19,10 @@ function Login() {
 
     return (
         <div className="loginContainer">
-            <h2>Login</h2>
+            <h2>ورود</h2>
             <form onSubmit={handleSubmit} className="form">
                 <div className="formControl">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="email">ایمیل</label>
                     <input
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
@@ -32,7 +32,7 @@ function Login() {
                     />
                 </div>
                 <div className="formControl">
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">کلمه عبور</label>
                     <input
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
@@ -42,7 +42,7 @@ function Login() {
                     />
                 </div>
                 <div className="buttons">
-                    <button className="btn btn--primary">Login</button>
+                    <button className="btn btn--primary">ورود</button>
                 </div>
             </form>
         </div>

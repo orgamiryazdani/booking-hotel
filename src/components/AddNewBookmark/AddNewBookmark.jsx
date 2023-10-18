@@ -26,7 +26,7 @@ function AddNewBookmark() {
             setGeoCodingError(null)
             try {
                 const { data } = await axios.get(`${BASE_GEOCODING_URL}?latitude=${lat}&longitude=${lng}`)
-                if (!data.countryCode) throw new Error("this location is not a city ! please click somewhere else.")
+                if (!data.countryCode) throw new Error("این مکان یک شهر نیست! لطفا در جای دیگری کلیک کنید")
                 setCityName(data.city || data.locality || "")
                 setCountry(data.countryName)
                 setCountryCode(data.countryCode)
@@ -59,15 +59,15 @@ function AddNewBookmark() {
     if (geoCodingError) return <p>{geoCodingError}</p>
 
     return (
-        <div>
-            <h2>Bookmark new Location</h2>
+        <div style={{ marginLeft: "20px" }}>
+            <h2>نشان کردن مکان جدید</h2>
             <form className="form" onSubmit={handleSubmit}>
                 <div className="formControl">
-                    <label htmlFor="cityName">CityName</label>
+                    <label htmlFor="cityName">شهر</label>
                     <input value={cityName} onChange={(e) => setCityName(e.target.value)} type="text" name="cityName" id="cityName" />
                 </div>
                 <div className="formControl">
-                    <label htmlFor="countryName">country</label>
+                    <label htmlFor="countryName">کشور</label>
                     <input value={country} onChange={(e) => setCountry(e.target.value)} type="text" name="countryName" id="countryName" />
                     <ReactCountryFlag svg className="flag" countryCode={countryCode} />
                 </div>
@@ -76,8 +76,8 @@ function AddNewBookmark() {
                         e.preventDefault()
                         navigate(-1)
                     }
-                    } className="btn btn--back">&larr; Back</button>
-                    <button className="btn btn--primary">Add</button>
+                    } className="btn btn--back">&rarr; برگشت</button>
+                    <button className="btn btn--primary">اضافه</button>
                 </div>
             </form>
         </div>

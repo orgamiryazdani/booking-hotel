@@ -8,7 +8,7 @@ function LocationList() {
 
     return (
         <div className="nearbyLocation">
-            <h2>Nearby Location</h2>
+            <h2>هتل های نزدیک شما</h2>
             <div className="locationList">
                 {
                     data.map((item) => {
@@ -18,8 +18,8 @@ function LocationList() {
                                 <p className="location">{item.smart_location}</p>
                                 <p className="name">{item.name}</p>
                                 <p className="price">
-                                    €&nbsp;{item.price}&nbsp;
-                                    <span>night</span>
+                                    {item.price} هزار تومان&nbsp; - &nbsp;
+                                    <span>یک شب</span>
                                 </p>
                             </div>
                         </div>

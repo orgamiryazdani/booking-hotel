@@ -13,10 +13,10 @@ function Bookmark() {
     }
 
     if (isLoading) return <Loader />
-    if (!bookmarks.length) return <p>there is no bookmark location</p>
+    if (!bookmarks.length) return <p>هیچ مکانی نشان نشده</p>
     return (
         <div>
-            <h2>BookmarkList</h2>
+            <h2>مکان های نشان شده</h2>
             <div className="bookmarkList">
                 {bookmarks.map((item) => {
                     return (

@@ -1,5 +1,6 @@
 import { MdLocationOn } from "react-icons/md"
 import { HiCalendar, HiLogout, HiMinus, HiPlus } from "react-icons/hi"
+import { FaMapPin } from "react-icons/fa"
 import { HiSearch } from "react-icons/hi"
 import { useRef, useState } from "react"
 import useOutsideClick from "../../hooks/useOutsideClick";
@@ -54,7 +55,6 @@ function Header() {
 
     return (
         <div className="header">
-            <NavLink to="bookmark">Bookmarks</NavLink>
             <div className="headerSearch">
                 <div className="headerSearchItem">
                     <MdLocationOn className="headerIcon locationIcon" />
@@ -62,7 +62,7 @@ function Header() {
                         value={destination}
                         onChange={e => setDestination(e.target.value)}
                         type="text"
-                        placeholder="where to go?"
+                        placeholder="کجا میروید؟"
                         className="headerSearchInput"
                         name="destination"
                         id="destination"
@@ -70,23 +70,29 @@ function Header() {
                     <span className="seperator"></span>
                 </div>
                 <div className="headerSearchItem">
+
                     <HiCalendar className="headerIcon dateIcon" />
                     <div onClick={() => setOpenDate(!openDate)} className="dateDropDown">
-                        {`${format(date[0].startDate, "MM/dd/yyy")} to ${format(date[0].endDate, "MM/dd/yyy")}`}
+                        انتخاب تاریخ :
+                        <br />
+                        {`${format(date[0].startDate, "MM/dd/yyy")} تا ${format(date[0].endDate, "MM/dd/yyy")}`}
                     </div>
-                    {openDate && <DateRange
-                        onChange={item => setDate([item.selection])}
-                        ranges={date}
-                        className="date"
-                        minDate={new Date()}
-                        moveRangeOnFirstSelection={true}
-                    />
-                    }
+                    <div className="dir">
+
+                        {openDate && <DateRange
+                            onChange={item => setDate([item.selection])}
+                            ranges={date}
+                            className="date"
+                            minDate={new Date()}
+                            moveRangeOnFirstSelection={true}
+                        />
+                        }
+                    </div>
                     <span className="seperator"></span>
                 </div>
                 <div className="headerSearchItem">
                     <div id="optionDropDown" onClick={() => setOpenOptions(!openOptions)}>
-                        {options.adult} adult &bull; {options.children} children &bull; {options.room} room
+                        {options.adult} بزرگسالان - {options.children} فرزندان - {options.room} اتاق
                     </div>
                     {
                         openOptions && <GuestOptionList options={options} setOpenOptions={setOpenOptions} handleOptions={handleOptions} />
@@ -99,6 +105,11 @@ function Header() {
                     </button>
                 </div>
             </div>
+            <NavLink to="bookmark">
+                <div className="bookmarkBTN">
+                    نشان شده <FaMapPin/>
+                </div>
+            </NavLink>
             <User />
         </div>
     )
@@ -110,15 +121,15 @@ function GuestOptionList({ options, handleOptions, setOpenOptions }) {
     const optionsRef = useRef()
     useOutsideClick(optionsRef, "optionDropDown", () => setOpenOptions(false))
     return <div className="guestOptions" ref={optionsRef}>
-        <OptionItem handleOptions={handleOptions} type="adult" options={options} minLimit={1} />
-        <OptionItem handleOptions={handleOptions} type="children" options={options} minLimit={0} />
-        <OptionItem handleOptions={handleOptions} type="room" options={options} minLimit={1} />
+        <OptionItem handleOptions={handleOptions} name="بزرگسالان" type="adult" options={options} minLimit={1} />
+        <OptionItem handleOptions={handleOptions} name="فرزندان" type="children" options={options} minLimit={0} />
+        <OptionItem handleOptions={handleOptions} name="اتاق" type="room" options={options} minLimit={1} />
     </div>
 }
 
-function OptionItem({ options, type, minLimit, handleOptions }) {
+function OptionItem({ options, type, minLimit, handleOptions, name }) {
     return <div className="guestOptionItem">
-        <span className="optionText">{type}</span>
+        <span className="optionText">{name}</span>
         <div className="optionCounter">
             <button
                 className="optionCounterBtn"
@@ -143,10 +154,17 @@ function User() {
         navigate("/")
     }
     return <div>
-        {isAuthenticated ? <div>
+        {isAuthenticated ? <div className="profile">
+            <img src="../../../public/images/user.png" className="user-png" alt="" />
             <span>{user.name}</span>
-            <button><HiLogout onClick={handleLogout} className="icon" /></button>
-        </div> : <NavLink to='login'>login</NavLink>}
+            {/* <button><HiLogout onClick={handleLogout} className="icon" /></button> */}
+        </div> :
+            <NavLink to='login'>
+                <div className="btn loginBTN">
+                    ورود
+                </div>
+            </NavLink>
+        }
     </div>
 
 }

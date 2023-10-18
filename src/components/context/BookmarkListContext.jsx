@@ -46,7 +46,7 @@ function bookmarkReducer(state, action) {
             error: action.payload
         }
         default:
-            throw new Error("Unknown action")
+            throw new Error("اقدام ناشناخته")
     }
 }
 
@@ -62,7 +62,7 @@ function BookmarkListProvider({ children }) {
                 dispatch({ type: "bookmarks/loaded", payload: data })
             } catch (error) {
                 toast.error(error.message)
-                dispatch({ type: "rejected", payload: "an Error occurred in loading bookmarks" })
+                dispatch({ type: "rejected", payload: "در بارگیری نشان ها خطایی رخ داد" })
             }
         }
         fetchBookmarkList()
@@ -76,7 +76,7 @@ function BookmarkListProvider({ children }) {
             dispatch({ type: "bookmark/loaded", payload: data })
         } catch (error) {
             toast.error(error.message)
-            dispatch({ type: "rejected", payload: "an Error occurred in fetching single bookmark" })
+            dispatch({ type: "rejected", payload: "خطایی در واکشی نشان واحد رخ داد" })
         }
     }
 
