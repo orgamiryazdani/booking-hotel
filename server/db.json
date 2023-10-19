@@ -1325,31 +1325,54 @@
   ],
   "bookmarks": [
     {
-      "cityName": "Harz (Landkreis Goslar)",
+      "cityName": "Bunde",
       "country": "Germany",
       "countryCode": "DE",
-      "latitude": "51.87309959004367",
-      "longitude": "10.432156712699298",
-      "host_location": "Harz (Landkreis Goslar) Germany",
-      "id": 7
+      "latitude": "52.19750685699392",
+      "longitude": "8.496594266087683",
+      "host_location": "Bunde Germany",
+      "id": 1
     },
     {
-      "cityName": "Lake Kutubu",
-      "country": "Papua New Guinea",
-      "countryCode": "PG",
-      "latitude": "-6.634740727845229",
-      "longitude": "143.45020683078044",
-      "host_location": "Lake Kutubu Papua New Guinea",
-      "id": 8
+      "cityName": "Tata",
+      "country": "Morocco",
+      "countryCode": "MA",
+      "latitude": "29.664189403696138",
+      "longitude": "-8.243733538582003",
+      "host_location": "Tata Morocco",
+      "id": 2
     },
     {
-      "cityName": "Tangorin",
-      "country": "Australia",
-      "countryCode": "AU",
-      "latitude": "-21.384216096721275",
-      "longitude": "144.32075264202567",
-      "host_location": "Tangorin Australia",
-      "id": 9
+      "cityName": "Bordj El Houasse",
+      "country": "Algeria",
+      "countryCode": "DZ",
+      "latitude": "23.981233711026714",
+      "longitude": "7.969450722522795",
+      "host_location": "Bordj El Houasse Algeria",
+      "id": 3
+    },
+    {
+      "cityName": "Sao Pedro do Sul",
+      "country": "Portugal",
+      "countryCode": "PT",
+      "latitude": "40.826280356677124",
+      "longitude": "-8.028945401480637",
+      "host_location": "Sao Pedro do Sul Portugal",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "name": "amiryazdani",
+      "email": "avm906avm907@gmail.com",
+      "password": "ryry",
+      "id": 1
+    },
+    {
+      "name": "امیر حسین یزدانی",
+      "email": "121212@gmail.com",
+      "password": "123123",
+      "id": 2
     }
   ]
 }
