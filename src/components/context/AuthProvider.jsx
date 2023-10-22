@@ -61,7 +61,7 @@ export default function AuthProvider({ children }) {
                     dispatch({ type: "login", payload: user[0] })
                     localStorage.setItem("user", JSON.stringify(user[0]))
                 } else {
-                    toast.error("ایمیل یا رمز عبور نا معتبر است")
+                    toast.error("ایمیل یا رمزعبور نامعتبر است")
                 }
             } catch (error) {
                 toast.error(error.message)

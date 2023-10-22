@@ -1343,15 +1343,6 @@
       "id": 2
     },
     {
-      "cityName": "Bordj El Houasse",
-      "country": "Algeria",
-      "countryCode": "DZ",
-      "latitude": "23.981233711026714",
-      "longitude": "7.969450722522795",
-      "host_location": "Bordj El Houasse Algeria",
-      "id": 3
-    },
-    {
       "cityName": "Sao Pedro do Sul",
       "country": "Portugal",
       "countryCode": "PT",
@@ -1359,6 +1350,33 @@
       "longitude": "-8.028945401480637",
       "host_location": "Sao Pedro do Sul Portugal",
       "id": 4
+    },
+    {
+      "cityName": "Tamanredjo",
+      "country": "Suriname",
+      "countryCode": "SR",
+      "latitude": "5.807291968003861",
+      "longitude": "-54.88592682232346",
+      "host_location": "Tamanredjo Suriname",
+      "id": 5
+    },
+    {
+      "cityName": "Budingen",
+      "country": "Germany",
+      "countryCode": "DE",
+      "latitude": "50.29986701674912",
+      "longitude": "9.15627446967542",
+      "host_location": "Budingen Germany",
+      "id": 6
+    },
+    {
+      "cityName": "Urdoma",
+      "country": "Russian Federation (the)",
+      "countryCode": "RU",
+      "latitude": "61.76517539863648",
+      "longitude": "48.68536190522287",
+      "host_location": "Urdoma Russian Federation (the)",
+      "id": 7
     }
   ],
   "users": [

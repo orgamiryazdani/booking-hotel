@@ -10,6 +10,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from "date-fns";
 import { NavLink, createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import { BiMenu } from "react-icons/bi";
 
 function Header() {
     const [searchParams] = useSearchParams()
@@ -70,7 +71,6 @@ function Header() {
                     <span className="seperator"></span>
                 </div>
                 <div className="headerSearchItem">
-
                     <HiCalendar className="headerIcon dateIcon" />
                     <div onClick={() => setOpenDate(!openDate)} className="dateDropDown">
                         انتخاب تاریخ :
@@ -78,7 +78,6 @@ function Header() {
                         {`${format(date[0].startDate, "MM/dd/yyy")} تا ${format(date[0].endDate, "MM/dd/yyy")}`}
                     </div>
                     <div className="dir">
-
                         {openDate && <DateRange
                             onChange={item => setDate([item.selection])}
                             ranges={date}
@@ -99,18 +98,21 @@ function Header() {
                     }
                     <span className="seperator"></span>
                 </div>
-                <div className="headerSearchItem">
+                <div className="searchBtn">
                     <button className="headerSearchBtn" onClick={handleSearch}>
                         <HiSearch className="headerIcon" />
                     </button>
                 </div>
             </div>
+            <div className="menuIcon"><BiMenu /></div>
+            <div className="loginBook">
             <NavLink to="bookmark">
                 <div className="bookmarkBTN">
-                    نشان شده <FaMapPin/>
+                    نشان شده <FaMapPin />
                 </div>
             </NavLink>
             <User />
+            </div>
         </div>
     )
 }
